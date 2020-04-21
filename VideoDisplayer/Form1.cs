@@ -15,10 +15,10 @@ namespace VideoDisplayer
 
         private void videoURL_1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (videoURLs.SelectedIndex >= 0)
+            if (MediaURL.SelectedIndex >= 0)
             {
                 //MediaPlayer.URL = videoURLs.SelectedItem.ToString();
-                MediaPlayer.URL = videoDIRs.Items[videoURLs.SelectedIndex].ToString();
+                MediaPlayer.URL = videoDIRs.Items[MediaURL.SelectedIndex].ToString();
                 MediaPlayer.Ctlcontrols.stop();
             }    
         }
@@ -38,13 +38,25 @@ namespace VideoDisplayer
             for (i = 0; i < s.Length; i++)
             {
                 videoDIRs.Items.Add(s[i]);
-                videoURLs.Items.Add(Path.GetFileName(s[i]));
+                MediaURL.Items.Add(Path.GetFileNameWithoutExtension(s[i]));
             }       
         }
 
         private void MediaPlayer_Enter(object sender, EventArgs e)
         {
             MediaPlayer.Ctlcontrols.play();
+        }
+
+        private void VideoDisplayer_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void MediaPlayer_ClickEvent(object sender, AxWMPLib._WMPOCXEvents_ClickEvent e)
+        {
+            //if (MediaPlayer.playState == WMPLib.WMPPlayState.wmppsPlaying)
+            //    MediaPlayer.Ctlcontrols.pause();
+            //else MediaPlayer.Ctlcontrols.play();
         }
     }
 }
