@@ -57,8 +57,6 @@
             this.videoURLs.SelectedIndexChanged += new System.EventHandler(this.videoURL_1_SelectedIndexChanged);
             this.videoURLs.DragDrop += new System.Windows.Forms.DragEventHandler(this.videoURL_1_DragDrop);
             this.videoURLs.DragEnter += new System.Windows.Forms.DragEventHandler(this.videoURL_1_DragEnter);
-            this.videoURLs.DragOver += new System.Windows.Forms.DragEventHandler(this.videoURLs_DragOver);
-            this.videoURLs.MouseDown += new System.Windows.Forms.MouseEventHandler(this.videoURLs_MouseDown);
             // 
             // openFileDialog1
             // 

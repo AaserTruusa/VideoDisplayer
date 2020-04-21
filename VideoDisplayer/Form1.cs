@@ -35,40 +35,14 @@ namespace VideoDisplayer
             int i;
             for (i = 0; i < s.Length; i++)
             {
-                videoURLs.Items.Add(Path.GetFileName(s[i]));
                 videoDIRs.Items.Add(s[i]);
-            }
-                
+                videoURLs.Items.Add(Path.GetFileName(s[i]));
+            }       
         }
 
         private void MediaPlayer_Enter(object sender, EventArgs e)
         {
             MediaPlayer.Ctlcontrols.play();
-        }
-
-        private void videoURLs_MouseDown(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void videoURLs_DragOver(object sender, DragEventArgs e)
-        {
-
-        }
-
-    }
-
-    public class DragItem
-    {
-        public ListBox Client;
-        public int Index;
-        public object Item;
-
-        public DragItem(ListBox client, int index, object item)
-        {
-            Client = client;
-            Index = index;
-            Item = item;
         }
     }
 }
