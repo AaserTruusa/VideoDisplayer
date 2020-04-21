@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -16,9 +15,12 @@ namespace VideoDisplayer
 
         private void videoURL_1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //MediaPlayer.URL = videoURLs.SelectedItem.ToString();
-            MediaPlayer.URL = videoDIRs.Items[videoURLs.SelectedIndex].ToString();
-            MediaPlayer.Ctlcontrols.stop();
+            if (videoURLs.SelectedIndex >= 0)
+            {
+                //MediaPlayer.URL = videoURLs.SelectedItem.ToString();
+                MediaPlayer.URL = videoDIRs.Items[videoURLs.SelectedIndex].ToString();
+                MediaPlayer.Ctlcontrols.stop();
+            }    
         }
 
         private void videoURL_1_DragEnter(object sender, DragEventArgs e)
